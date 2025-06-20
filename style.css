@@ -1,0 +1,372 @@
+:root {
+  --bg: #fefefe;
+  --text: #2e2e2e;
+  --card: #ffffff;
+  --income: #4caf50;
+  --expense: #ef5350;
+  --item-bg: #fafafa;
+  --primary: #3f51b5;
+  --shadow: rgba(0, 0, 0, 0.1);
+}
+h1 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: var(--text); /* optional: uses your theme text color */
+}
+
+body.dark-mode {
+  --bg: #121212;
+  --text: #e0e0e0;
+  --card: #1f1f1f;
+  --item-bg: #292929;
+  --primary: #7986cb;
+  --shadow: rgba(255, 255, 255, 0.1);
+}
+
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background-color: var(--bg);
+  color: var(--text);
+  transition: all 0.4s ease;
+}
+
+.container {
+  width: 90%;
+  max-width: 720px;
+  margin: 30px auto;
+  padding: 30px;
+  background: var(--card);
+  border-radius: 15px;
+  box-shadow: 0 6px 18px var(--shadow);
+  box-sizing: border-box;
+}
+
+h2, h3 {
+  text-align: center;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.balance-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 10px 0 20px;
+}
+
+.balance-container h1 {
+  font-size: 3rem;
+  color: #23e875;
+  margin: 10px 0;
+}
+
+.summary {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 40px;
+  margin: 25px 0 35px;
+}
+
+.summary .income,
+.summary .expense {
+  flex: 1 1 200px;
+  background: var(--item-bg);
+  padding: 15px 20px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 2px 6px var(--shadow);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.money.plus {
+  color: forestgreen !important;
+  font-weight: 600;
+  font-size: 1.2rem;
+  margin: 0;
+}
+
+.money.minus {
+  color: firebrick !important;
+  font-weight: 600;
+  font-size: 1.2rem;
+  margin: 0;
+}
+
+/* Form Styles */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+form input,
+form select {
+  width: 100%;
+  height: 48px;
+  padding: 12px 16px;
+  border-radius: 10px;
+  border: 1.5px solid #ccc;
+  background: var(--card);
+  color: var(--text);
+  font-size: 1rem;
+  box-sizing: border-box;
+}
+
+form input:focus,
+form select:focus {
+  border-color: var(--primary);
+  outline: none;
+}
+
+/* Buttons */
+.btn,
+.btn-secondary {
+  width: 100%;
+  padding: 15px;
+  border: none;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn {
+  background: var(--primary);
+  color: white;
+}
+
+.btn:hover {
+  background: #303f9f;
+}
+
+.btn-secondary {
+  background: #757de8;
+  color: white;
+}
+
+.btn-secondary:hover {
+  background: #5c6bc0;
+}
+
+/* Filter Section */
+.filters-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: space-between;
+  margin: 20px 0;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.filters-row select,
+.filters-row input[type="date"],
+#clearFilters {
+  flex: 1 1 200px;
+  min-width: 100px;
+  max-width: 150px;
+  padding: 12px;
+  border-radius: 10px;
+  border: 1.5px solid #ccc;
+  font-size: 1rem;
+  background: var(--card);
+  color: var(--text);
+  box-sizing: border-box;
+}
+
+.filters-button {
+  display: flex;
+  justify-content: right;  /* center horizontally */
+  margin-top: 10px;         /* optional spacing */
+}
+#clearFilters {
+  font-weight: 600;
+  background: var(--expense);
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#clearFilters:hover {
+  background: firebrick;
+}
+
+/* Filter Wrapper (if needed for extra spacing) */
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 24px;
+}
+
+/* Transaction List */
+.list {
+  list-style: none;
+  padding: 0;
+  margin: 30px 0;
+  max-height: 280px;
+  overflow-y: auto;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px var(--shadow);
+}
+
+.list li {
+  display: flex;
+  justify-content: space-between;
+  background: var(--item-bg);
+  color: var(--text);
+  padding: 14px 20px;
+  margin: 12px 16px;
+  border-left: 6px solid;
+  border-radius: 10px;
+  align-items: center;
+  font-size: 1.05rem;
+  transition: background-color 0.3s ease;
+}
+
+.list li.income {
+  border-color: var(--income);
+}
+
+.list li.expense {
+  border-color: var(--expense);
+}
+
+.list li:hover {
+  background-color: var(--primary);
+  color: white;
+  cursor: pointer;
+}
+
+/* Delete Button */
+.delete-btn {
+  background: transparent;
+  border: none;
+  color: var(--expense);
+  font-weight: 700;
+  font-size: 20px;
+  margin-left: 15px;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.delete-btn:hover {
+  color: #b71c1c;
+}
+
+/* Chart Section */
+.charts-container {
+  margin-top: 35px;
+}
+
+canvas {
+  width: 100% !important;
+  background: var(--item-bg);
+  border-radius: 15px;
+  padding: 20px;
+  margin-bottom: 25px;
+}
+
+/* Theme Toggle */
+#toggleTheme {
+  margin-top: 10px;
+  background: var(--primary);
+  font-weight: 600;
+  width: 100%;
+  padding: 14px;
+  border-radius: 10px;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+#toggleTheme:hover {
+  background: #303f9f;
+}
+
+/* Action Buttons (bottom row) */
+.action-buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  margin-top: 20px;
+  flex-wrap: wrap;
+}
+
+.action-buttons .btn,
+.action-buttons .btn-secondary {
+  height: 48px;
+  padding: 0 20px;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 10px;
+  white-space: nowrap;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 600px) {
+  .container {
+    padding: 20px;
+    margin: 20px 10px;
+  }
+
+  .balance-container h1 {
+    font-size: 2.2rem;
+  }
+
+  .summary {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  h2, h3 {
+    font-size: 1.3rem;
+  }
+
+  .filters-row {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .filters-row select,
+  .filters-row input[type="date"],
+  #clearFilters {
+    width: 100%;
+    max-width: 100%;
+    flex: none;
+  }
+ 
+}
+.form-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.form-grid input,
+.form-grid select {
+  flex: 1 1 200px;
+  min-width: 160px;
+  padding: 12px;
+  font-size: 1rem;
+  border-radius: 10px;
+  border: 1.5px solid #ccc;
+  background: var(--card);
+  color: var(--text);
+}
+

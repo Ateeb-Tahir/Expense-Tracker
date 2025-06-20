@@ -1,8 +1,6 @@
-# Expense-Tracker
-The Expense Tracker is a modern web application designed to help users manage their personal finances efficiently. Built using HTML, CSS, and JavaScript, the app enables users to track income and expenses, categorize transactions, filter by date and type, and visualize their financial data using interactive charts (via Chart.js)
-# 💸 EduFinTracker
+# 💸 Trackify
 
-**EduFinTracker** is a smart and responsive personal finance tracker that helps users monitor their daily expenses. It features real-time filtering, category breakdowns, and beautiful visualizations to simplify money management for students and professionals alike.
+**Trackify** is a smart and responsive personal finance tracker that helps users monitor their daily expenses. It features real-time filtering, category breakdowns, and beautiful visualizations to simplify money management for students and professionals alike.
 
 ## ✨ Features
 
@@ -29,7 +27,7 @@ The Expense Tracker is a modern web application designed to help users manage th
 - [Chart.js](https://www.chartjs.org/) for data visualization
 
 ## 📂 Folder Structure
-EduFinTracker/
+ExpenseTracker/
 ├── index.html
 ├── style.css
 ├── script.js
